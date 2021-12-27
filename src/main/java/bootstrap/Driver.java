@@ -1,10 +1,13 @@
 package bootstrap;
 
 import org.apache.log4j.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class Driver {
 
     static String[] COLORS = {"red", "blue", "green", "yellow"};
+    static Logger logger = LoggerFactory.getLogger(Driver.class);
 
     /**
      * This is the start of the main program!
@@ -13,7 +16,8 @@ public class Driver {
      * @throws Exception
      */
     public static void main(String[] args) throws Exception {
-        System.out.println("Hello World");
+        configureLogging("var/log/gitIntro/", false, System.currentTimeMillis());
+        logger.info("Hello World");
     }
 
     /**
